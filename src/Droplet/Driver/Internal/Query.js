@@ -1,13 +1,5 @@
 'use strict';
 
-import pg from 'pg';
-
-function id(x) { return x; }
-
-pg.types.setTypeParser(1082 /* DATE_OID */, id);
-pg.types.setTypeParser(1114 /* TIMESTAMP_OID */, id);
-pg.types.setTypeParser(1184 /* TIMESTAMPTZ_OID */, id);
-
 export function connect_(config) {
     return function (pool) {
         return function (onError, onSuccess) {
